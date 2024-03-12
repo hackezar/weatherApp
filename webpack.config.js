@@ -73,4 +73,10 @@ module.exports = {
       new CssMinimizerPlugin(),
     ],
   },
+  resolve: {
+    fallback: {
+      fs: false,
+      path: false
+    },
+  }
 };
