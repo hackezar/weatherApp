@@ -2,11 +2,12 @@ import cities from 'cities.json';
 
 export  function autocompleteMatch(input) {
 
+
     function renderDatabase() {
         let citiesData = [];
         //gets the name of each city from database and adds it to an array
         for (let i=0; i<cities.length; i++) {
-            citiesData.push(cities[i].name);
+            citiesData.push(cities[i]);
         }
         return citiesData;
     }
@@ -16,23 +17,40 @@ export  function autocompleteMatch(input) {
     if(input =='') {
         return[];
     }
-    let reg = new RegExp(input);
-    return searchTerms.filter(function(term) {
-        if (term.match(reg)) {
-            return term;
-        }
-    });
+    let reg = new RegExp;
+
+    const autoCompleteOptions = (cities) => {
+            return cities.filter(c => {
+            let city = c.name;
+            city = city.toLowerCase();
+            return city.includes(input.toLowerCase());
+        });
+    };
+    return autoCompleteOptions(searchTerms);
 }
 
 export function showResults(val) {
+    if (val.length < 3) {
+        return;
+    } else {
     let res = document.getElementById('result');
     res.innerHTML = '';
     let list = '';
     let terms = autocompleteMatch(val);
+    // HOW MANY SEARCH RESULTS TO DISPLAY //
+    let resultAmount = 10
+    //
     for (let i=0; i<terms.length; i++) {
-        list += '<li>' + terms[i] + '</li>';
+        //Stops addin to list if the list length is greater than resultAmount
+            if (i >= resultAmount) {        
+            res.innerHTML = '<ul>' + list + '</ul>';
+            return;
+        }
+        list += '<li>' + terms[i].name + ', ' + terms[i].country + '</li>';
+
     }
     res.innerHTML = '<ul>' + list + '</ul>';
+    }
 }
 
 export function keyUpEventListener() {

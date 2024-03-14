@@ -12,10 +12,6 @@
   display: inline-block;
 }
 
-input[type=text] {
-
-}
-
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -42,4 +38,8 @@ input[type=text] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
 }
