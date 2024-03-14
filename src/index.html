@@ -7,15 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="index.bundle.js"></script></script></head>
 
   <body>
-    <form autocomplete="off" action="/action_page.php">
+    <div class="header">
+      <div class="title">
+        Weather App
+      </div>
+      <form class="searchBarFormDiv" autocomplete="off" action="/action_page.php">
         <label id='searchIcon' for='q'>
           <input type="text" name="q" id="q"/>
           <span class="material-symbols-outlined">search</span>
         </label>
         <div id="result" class="noDots"></div>
       </form>
-      
-      </div>
-    </form>
+    </div>
+
   </body>
 </html>

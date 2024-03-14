@@ -5,6 +5,6 @@ import "./style.css";
 
 
 //js
-import { autocompleteMatch, showResults, keyUpEventListener} from "./renderDatabase";
+import { autocompleteMatch, showResults, searchBarKeyUpEventListener} from "./renderDatabase";
 
-keyUpEventListener();
+searchBarKeyUpEventListener();

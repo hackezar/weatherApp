@@ -30,11 +30,11 @@ export  function autocompleteMatch(input) {
 }
 
 export function showResults(val) {
+    let res = document.getElementById('result');
+    res.innerHTML = '';
     if (val.length < 3) {
         return;
     } else {
-    let res = document.getElementById('result');
-    res.innerHTML = '';
     let list = '';
     let terms = autocompleteMatch(val);
     // HOW MANY SEARCH RESULTS TO DISPLAY //
@@ -53,7 +53,7 @@ export function showResults(val) {
     }
 }
 
-export function keyUpEventListener() {
+export function searchBarKeyUpEventListener() {
     document.getElementById('q').addEventListener('keyup', () => {
         showResults(document.getElementById('q').value);
     })
