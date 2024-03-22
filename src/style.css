@@ -15,13 +15,9 @@ body {
   'opsz' 24
 }
 
-.searchBarFormDiv {
-  display: flex;
-  justify-content: end;
-}
-
 #result {
   display: flex;
+  position: absolute;
 }
 
 ul {
@@ -30,13 +26,13 @@ ul {
   flex-direction: column;
 }
 
-li {
+.item {
   padding: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
-li:hover {
+.item:hover {
   background-color: #778899;
   font-weight: 700;
 }
@@ -44,4 +40,18 @@ li:hover {
 #searchIcon {
   display: flex;
   justify-content: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#cityTitle {
+
+}
+
+.weatherContainer {
+  border: 1px solid black;
 }

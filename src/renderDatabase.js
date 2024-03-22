@@ -1,4 +1,5 @@
 import cities from 'cities.json';
+import autoCompleteSearchBarEventListeners from './cityLookup';
 
 export  function autocompleteMatch(input) {
 
@@ -40,21 +41,23 @@ export function showResults(val) {
     // HOW MANY SEARCH RESULTS TO DISPLAY //
     let resultAmount = 10
     //
+    // For function adds a list item for every term
     for (let i=0; i<terms.length; i++) {
         //Stops addin to list if the list length is greater than resultAmount
             if (i >= resultAmount) {        
-            res.innerHTML = '<ul>' + list + '</ul>';
+            res.innerHTML = '<ul id="searchList">' + list + '</ul>';
             return;
         }
-        list += '<li>' + terms[i].name + ', ' + terms[i].country + '</li>';
+        list += '<li id="item' + i + '" class="item">' + terms[i].name + ', ' + terms[i].country + '</li>';
+    }
+    res.innerHTML = '<ul id="searchList">' + list + '</ul>';
+    };
+};
 
-    }
-    res.innerHTML = '<ul>' + list + '</ul>';
-    }
-}
 
 export function searchBarKeyUpEventListener() {
     document.getElementById('q').addEventListener('keyup', () => {
         showResults(document.getElementById('q').value);
-    })
+        autoCompleteSearchBarEventListeners();
+    });
 }
