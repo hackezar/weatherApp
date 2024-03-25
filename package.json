@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development",
-    "prod": "webpack --mode=production",
+    "build": "webpack --mode=production",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "watch": "npx webpack --watch",
-    "start": "webpack serve --open",
+    "start": "webpack serve --open"
   },
   "keywords": [],
   "author": "",
@@ -43,5 +44,10 @@
     "fs": false,
     "path": false,
     "os": false
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackezar/weatherApp.git"
+  },
+  "homepage": "https://hackezar.github.io/weatherApp"
 }
