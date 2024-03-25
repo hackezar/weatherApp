@@ -25,6 +25,7 @@ export default function searchBarEventListeners() {
             updateTitleDOM(data);
             getWeather(data);
             getForecast(data);
+            document.getElementById('main').style.display = 'flex';
         })
     })
 }
